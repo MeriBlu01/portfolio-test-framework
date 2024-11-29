@@ -1,0 +1,11 @@
+
+# testAUT
+.env
+
+# Ignore all .txt files
+*.txt
+backups
+
+node_modules
+
+features/notes/*

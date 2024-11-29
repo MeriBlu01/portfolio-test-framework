@@ -1,0 +1,692 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-smoke-apis;sucessfull-index-web-page-landing",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Sucessfull index web page landing",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1075991599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "a GET request is made to endpoint \"https://parabank.parasoft.com/parabank/index.htm\"",
+            "match": {
+              "location": "features\\step_definitions\\api\\login-api-steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 372963699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "a response is received with 200 status code",
+            "match": {
+              "location": "features\\step_definitions\\api\\login-api-steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 408699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "it should return a valid HTML response with \"ISO-8859-1\" charset",
+            "match": {
+              "location": "features\\step_definitions\\api\\login-api-steps.js:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 299500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 43971000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SMOKE",
+            "line": 1
+          },
+          {
+            "name": "@API",
+            "line": 1
+          },
+          {
+            "name": "@P0",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-smoke-apis",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Login SMOKE APIs",
+    "tags": [
+      {
+        "name": "@SMOKE",
+        "line": 1
+      },
+      {
+        "name": "@API",
+        "line": 1
+      },
+      {
+        "name": "@P0",
+        "line": 1
+      }
+    ],
+    "uri": "features\\api\\login-api.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-page-functionality;remember-me-checkbox-is-checked-by-default",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Remember Me checkbox is checked by default",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 938498699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to login form",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3836742400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Remember Me checkbox is already checked",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42059999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 31622500
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SMOKE",
+            "line": 1
+          },
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@P0",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-functionality;input-fields-email-and-password-must-be-mandatory",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Input fields Email and Password must be mandatory",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1088646499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to login form",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6920271300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "user clicks on Sign In button",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70496500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the message \"Invalid email or password.\" is displayed",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1373246299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 39812900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SMOKE",
+            "line": 1
+          },
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@P0",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-functionality;the-user-enters-invalid-password-credential",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "The user enters invalid Password credential",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 898008200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to login form",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4347146000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "user enters valid Email credential",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 127012699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "user enters invalid Password credential",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 87600899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "user clicks on Sign In button",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 50770700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the message \"Invalid email or password.\" is displayed",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1546842300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 43153099
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SMOKE",
+            "line": 1
+          },
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@P0",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-functionality;the-user-enters-invalid-email-credential",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "The user enters invalid Email credential",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 890058600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to login form",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4151379499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 22,
+            "name": "user enters invalid Email credential",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 157051799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "user enters valid Password credential",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:94"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88461800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "user clicks on Sign In button",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55875000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "the message \"Invalid email or password.\" is displayed",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1610635299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 37454200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SMOKE",
+            "line": 1
+          },
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@P0",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-functionality;the-user-logs-in-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "The user logs in with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 957426400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to login form",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5720177399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "user enters valid Email credential",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 110745999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "user enters valid Password credential",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:94"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76719299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "user clicks on Sign In button",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 50326699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "the page url contains \"/collections\"",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2109121599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 46572200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SMOKE",
+            "line": 1
+          },
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@P0",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-page-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Login page functionality",
+    "tags": [
+      {
+        "name": "@SMOKE",
+        "line": 1
+      },
+      {
+        "name": "@E2E",
+        "line": 1
+      },
+      {
+        "name": "@P0",
+        "line": 1
+      }
+    ],
+    "uri": "features\\e2e\\login-e2e.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "register-page-functionality;navigate-to-register-page-from-login-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Navigate to Register page from Login page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 883376199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to login form",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4160950599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "user clicks on Create a new account link",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\register-e2e-steps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1023696700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "the page url contains \"/sign_up\"",
+            "match": {
+              "location": "features\\step_definitions\\e2e\\login-e2e-steps.js:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 508973300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 49244200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SMOKE",
+            "line": 1
+          },
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@P0",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "register-page-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Register page functionality",
+    "tags": [
+      {
+        "name": "@SMOKE",
+        "line": 1
+      },
+      {
+        "name": "@E2E",
+        "line": 1
+      },
+      {
+        "name": "@P0",
+        "line": 1
+      }
+    ],
+    "uri": "features\\e2e\\register-e2e.feature"
+  }
+]

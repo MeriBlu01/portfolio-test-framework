@@ -1,0 +1,78 @@
+name: Pull Request Validation
+
+on:
+    pull_request:
+      branches: 
+        # [ $default-branch ]
+        - develop
+        - main
+      paths:
+        - features/**
+    workflow_dispatch:
+
+
+jobs:
+  pull-request-previous-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          # This ensures that the exact code associated with the PR is available.
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x" # Ensure this matches your project's requirements
+
+      # Install dependencies
+      - name: Setup npm package & Install Dependencies
+        run: |
+          npm init -y
+          npm install
+          echo "Installed Libraries:"
+          npm list --depth=0
+
+      # Run lint-staged
+      - name: Run Lint Staged
+        run: npx lint-staged
+
+      - name: Clean-up
+        run: npm run cleanup
+
+      # Run Tests (Cucumber.js)
+      - name: Set Up Cucumber Configuration & Run Tests
+        env:
+          ULTIMATE_EMAIL: ${{ secrets.ULTIMATE_EMAIL }}
+          ULTIMATE_PASSWORD: ${{ secrets.ULTIMATE_PASSWORD }}
+          ULTIMATE_NAME: ${{ secrets.ULTIMATE_NAME }}
+          ULTIMATE_LASTNAME: ${{ secrets.ULTIMATE_LASTNAME }}
+          PARABANK_BASE_URL: ${{ secrets.PARABANK_BASE_URL }}
+          ULTIMATE_QA_BASE_URL: ${{ secrets.ULTIMATE_QA_BASE_URL }}
+        
+        # Run all tests
+        run: npx cucumber-js --config config/cucumber.js features/api/login-api.feature
+
+      - name: Second Phase
+        run: |
+          echo "Testing is complete, time to create reports"
+
+      - name: Report creation
+        if: ${{ always() }}
+        run: npm run report
+
+      - name: Upload results
+        if: ${{ always() && !cancelled() }}
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: PR_TESTS_CUCUMBER_REPORT
+          path: |
+            ./reports/cucumber_html_report.html
+            ./reports/cucumber_json_report.json
+    
+      
