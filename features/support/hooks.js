@@ -1,5 +1,6 @@
 const { Before, After } = require("@cucumber/cucumber");
 const Browser = require("../../drivers/chromeDriver");
+const { faker } = require('@faker-js/faker');
 // const fs = require('fs');
 // const path = require('path');
 
@@ -9,6 +10,7 @@ const Browser = require("../../drivers/chromeDriver");
 Before({ timeout: 30000 }, async function () {
   // Initialize Driver
   this.driver = await Browser.getDriver();
+  this.faker = faker;
 });
 
 After({ timeout: 10000 }, async function () {
