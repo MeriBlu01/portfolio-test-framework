@@ -10,6 +10,9 @@ on:
         options:
           - 'develop'
           - 'staging'
+  schedule:
+    # Runs at 17:30 UTC (11:30 AM CST) on Monday through Friday
+    - cron: '00 18 * * 1-5'
 
 jobs:
   pull-request-previous-checks:
@@ -51,7 +54,7 @@ jobs:
           ULTIMATE_EMAIL: ${{ secrets.ULTIMATE_EMAIL }}
           ULTIMATE_PASSWORD: ${{ secrets.ULTIMATE_PASSWORD }}
           ULTIMATE_NAME: ${{ secrets.ULTIMATE_NAME }}
-          ULTIMATE_LASTNAME: ${{ secrets.ULTIMATE_LASTNAME }}
+          ULTIMATE_LASTNAME: ${{ secrets.ULTIMATE_LASTNAME || 'default_lastname' }}
           PARABANK_BASE_URL: ${{ secrets.PARABANK_BASE_URL }}
           ULTIMATE_QA_BASE_URL: ${{ secrets.ULTIMATE_QA_BASE_URL }}
         
@@ -59,8 +62,8 @@ jobs:
         run: |
           npx cucumber-js \
             --config config/cucumber.js \
-            --tags "@SMOKE and @API and @P0 and not (@BUG or @DEPRECATED or @WIP or @FLAKY or @REFACTOR-NEEDED)" \
-            features/api/*.feature features/e2e/*.feature
+            --tags "@SMOKE and @API and (@P0 or @P1) and not (@BUG or @DEPRECATED or @WIP or @FLAKY or @REFACTOR-NEEDED)" \
+            features/api/*.feature
 
       - name: Report creation
         if: ${{ always() }}

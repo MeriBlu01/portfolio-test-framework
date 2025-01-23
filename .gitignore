@@ -8,4 +8,10 @@ backups
 
 node_modules
 
+<<<<<<< HEAD
 features/notes/*
+=======
+features/notes/*
+
+reports
+>>>>>>> develop

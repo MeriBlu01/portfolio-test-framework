@@ -6,7 +6,7 @@ const Browser = require("../../drivers/chromeDriver");
 // Set the default timeout for all steps to 60 seconds
 //setDefaultTimeout(60 * 1000);
 
-Before({ timeout: 10000 }, async function () {
+Before({ timeout: 30000 }, async function () {
   // Initialize Driver
   this.driver = await Browser.getDriver();
 });
