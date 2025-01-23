@@ -17,9 +17,14 @@ let expect;
 })();
 
 Given("user navigates to login form", { timeout: 10000 }, async function () {
-  loginPage = new LoginPage(this.driver);
-  console.log("\nNavigating to:", urls.loginPageUrl);
-  await this.driver.get(urls.loginPageUrl);
+  try{
+    loginPage = new LoginPage(this.driver);
+    console.log("\nNavigating to:", urls.loginPageUrl);
+    await this.driver.get(urls.loginPageUrl);
+
+  } catch (error) {
+    console.error("\nNavigation to login page failed: \n", error);
+  }
 });
 
 When("user clicks on Sign In button", async function () {

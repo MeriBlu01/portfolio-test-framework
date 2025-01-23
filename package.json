@@ -8,7 +8,7 @@
     "api": "npx cucumber-js --config config/cucumber.js features/api/**/*.feature",
     "all": "npx cucumber-js",
     "cleanup": "node scripts/cleanUpReportsFolder.js",
-    "select": "npx cucumber-js --config config/cucumber.js features/e2e/register-e2e.feature",
+    "select": "npx cucumber-js --config config/cucumber.js features/e2e/login-e2e.feature",
     "start": "npm run cleanup && npm run config",
     "lint-fix": "eslint --fix",
     "report": "node index.js",
