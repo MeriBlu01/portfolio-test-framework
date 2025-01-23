@@ -2,20 +2,21 @@
   "name": "test_framework",
   "main": "index.js",
   "scripts": {
-    "test": "node helpers/browser.js && mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register",
-    "e2e": "cucumber-js features/e2e/**/*.feature --tags 'not skip'",
-    "cleanup": "node scripts/cleanUpReportsFolder.js",
-    "test:report": "npm run test && npm run report",
-    "e2e:test:report": "npm run e2e && npm run test:report",
-    "new:report": "mocha --reporter mochawesome --require mochawesome/register --reporter-options reportDir=customReportDir,reportFileName=customReportFileName",
-    "go": "npx cucumber-js features/e2e/register-e2e.feature",
-    "api": "npx cucumber-js features/api/login-api.feature",
+    "test": "node drivers/chromeDriver.js && mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register",
+    "mocha-report": "mocha --reporter mochawesome --require mochawesome/register --reporter-options reportDir=customReportDir,reportFileName=customReportFileName",
+    "e2e": "npx cucumber-js --config config/cucumber.js features/e2e/**/*.feature",
+    "api": "npx cucumber-js --config config/cucumber.js features/api/**/*.feature",
     "all": "npx cucumber-js",
-    "config": "npx cucumber-js --config config/cucumber.js features/e2e/register-e2e.feature",
+    "cleanup": "node scripts/cleanUpReportsFolder.js",
+    "select": "npx cucumber-js --config config/cucumber.js features/e2e/register-e2e.feature",
     "start": "npm run cleanup && npm run config",
     "lint-fix": "eslint --fix",
     "report": "node index.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cleanup:all:report": "npm run cleanup && npm run all && npm run report",
+    "cleanup:e2e:report": "npm run cleanup && npm run e2e && npm run report",
+    "cleanup:api:report": "npm run cleanup && npm run api && npm run report",
+    "cleanup:select:report": "npm run cleanup && npm run select && npm run report"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -31,7 +32,7 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^11.0.1",
+    "@cucumber/cucumber": "^11.2.0",
     "@eslint/js": "^9.14.0",
     "@faker-js/faker": "^9.2.0",
     "chai": "^5.1.2",
