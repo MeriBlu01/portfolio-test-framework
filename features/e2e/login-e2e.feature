@@ -19,7 +19,8 @@ Feature: Login page functionality
     Then the message "Invalid email or password." is displayed
 
   Scenario: The user enters invalid Email credential
-    When user enters invalid Email credential
+    When a random Email is generated
+    And user enters invalid Email credential
     And user enters valid Password credential
     And user clicks on Sign In button
     Then the message "Invalid email or password." is displayed

@@ -8,6 +8,7 @@ const urls = require("../../support/navigation");
 const { By } = require("selenium-webdriver");
 const { screenShotError } = require("../../support/helpers/utils");
 
+
 let loginPage;
 
 // chai dynamic import()
@@ -88,8 +89,7 @@ When("user enters invalid Email credential", async function () {
   try {
     // Wait for email field to be present and then type data
     const emailInput = await loginPage.getInputEmail();
-    const dummyEmail = faker.internet.email();
-    await Action.typeData(emailInput, dummyEmail); //'DummyEmail@email.com'
+    await Action.typeData(emailInput, this.testEmail);
   } catch (error) {
     console.error("\nError in step definition:\n", error);
     return screenShotError(this.driver, error, this);
