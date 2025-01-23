@@ -1,5 +1,4 @@
 require("dotenv").config();
-const { faker } = require("@faker-js/faker");
 const { Given, When, Then } = require("@cucumber/cucumber");
 const LoginPage = require("../../page_objects/login-selectors");
 const Action = require("../../support/helpers/common-actions");
@@ -109,8 +108,8 @@ When("user enters valid Password credential", async function () {
 When("user enters invalid Password credential", async function () {
   try {
     const passwordInput = await loginPage.getInputPassword();
-    const fakePassword = faker.internet.password({ prefix: "!1AT" });
-    await Action.typeData(passwordInput, fakePassword);
+    // const fakePassword = faker.internet.password({ prefix: "!1AT" });
+    await Action.typeData(passwordInput, this.testPassword);
   } catch (error) {
     console.error("\nError in step definition:\n", error);
     return screenShotError(this.driver, error, this);
