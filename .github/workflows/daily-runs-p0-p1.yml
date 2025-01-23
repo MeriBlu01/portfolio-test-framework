@@ -10,6 +10,8 @@ on:
         options:
           - 'develop'
           - 'staging'
+  schedule:
+    - cron: '30 17 * * 1-5'  # Runs at 17:30 UTC (11:30 AM CST) on Monday through Friday
 
 jobs:
   pull-request-previous-checks:
