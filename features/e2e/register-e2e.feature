@@ -1,4 +1,4 @@
-@SMOKE @E2E @P0
+@REGRESSION @SMOKE @E2E @P0
 Feature: Register page functionality
 
   Scenario: Navigate to Register page from Login page

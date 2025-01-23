@@ -59,8 +59,8 @@ jobs:
         run: |
           npx cucumber-js \
             --config config/cucumber.js \
-            --tags "@SMOKE and @API and @P0 and not (@BUG or @DEPRECATED or @WIP or @FLAKY or @REFACTOR-NEEDED)" \
-            features/api/*.feature features/e2e/*.feature
+            --tags "@SMOKE and @API and (@P0 or @P1) and not (@BUG or @DEPRECATED or @WIP or @FLAKY or @REFACTOR-NEEDED)" \
+            features/api/*.feature
 
       - name: Report creation
         if: ${{ always() }}

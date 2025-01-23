@@ -1,4 +1,4 @@
-@SMOKE @API @P0
+@REGRESSION @SMOKE @API @P0
 Feature: Login SMOKE APIs
 
   Scenario: Sucessfull index web page landing

@@ -1,4 +1,4 @@
-@SMOKE @E2E @P0
+@REGRESSION @SMOKE @E2E @P0
 Feature: Login page functionality
 
   Background:

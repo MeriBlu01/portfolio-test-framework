@@ -16,7 +16,8 @@
     "cleanup:all:report": "npm run cleanup && npm run all && npm run report",
     "cleanup:e2e:report": "npm run cleanup && npm run e2e && npm run report",
     "cleanup:api:report": "npm run cleanup && npm run api && npm run report",
-    "cleanup:select:report": "npm run cleanup && npm run select && npm run report"
+    "cleanup:select:report": "npm run cleanup && npm run select && npm run report",
+    "testing": "npx cucumber-js --config config/cucumber.js --tags \"@SMOKE and @API and (@P0 or @P1) and not (@BUG or @DEPRECATED or @WIP or @FLAKY or @REFACTOR-NEEDED)\" features/api/**/*.feature"
   },
   "dependencies": {
     "axios": "^1.7.7",

@@ -9,3 +9,5 @@ backups
 node_modules
 
 features/notes/*
+
+reports
