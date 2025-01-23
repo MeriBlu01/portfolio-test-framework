@@ -51,7 +51,7 @@ jobs:
           ULTIMATE_EMAIL: ${{ secrets.ULTIMATE_EMAIL }}
           ULTIMATE_PASSWORD: ${{ secrets.ULTIMATE_PASSWORD }}
           ULTIMATE_NAME: ${{ secrets.ULTIMATE_NAME }}
-          ULTIMATE_LASTNAME: ${{ secrets.ULTIMATE_LASTNAME }}
+          ULTIMATE_LASTNAME: ${{ secrets.ULTIMATE_LASTNAME || 'default_lastname' }}
           PARABANK_BASE_URL: ${{ secrets.PARABANK_BASE_URL }}
           ULTIMATE_QA_BASE_URL: ${{ secrets.ULTIMATE_QA_BASE_URL }}
         

@@ -6,6 +6,7 @@ class Action {
     await selector.clear();
     await selector.click();
     await selector.sendKeys(data);
+    
   }
 
   async clearInputs(elements) {
